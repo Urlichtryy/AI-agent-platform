@@ -1,4 +1,4 @@
-# AI 代码助手（全栈示例）
+# AI 代码助手
 
 ## 结构
 - backend/demo: Spring Boot 服务（Web + Security + JPA + JWT）
