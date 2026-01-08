@@ -1,0 +1,52 @@
+:root{
+	--primary:#2563eb;          /* 浅蓝强调色 */
+	--primary-600:#1e40af;
+	--text:#111827;             /* 深灰正文 */
+	--muted:#6b7280;            /* 次要信息 */
+	--bg:#ffffff;               /* 页面背景 */
+	--panel:#f8fafc;            /* 面板浅灰 */
+	--card:#ffffff;             /* 卡片白色 */
+	--border:#e5e7eb;           /* 描边灰 */
+	--shadow:0 6px 20px rgba(17,24,39,0.06);
+}
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;background:var(--bg);color:var(--text);font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';}
+a{color:var(--primary);text-decoration:none}
+.btn{background:var(--primary);color:#fff;border:1px solid var(--primary-600);border-radius:10px;padding:10px 16px;cursor:pointer;box-shadow:var(--shadow);transition:.15s;font-size:16px;line-height:22px}
+.btn:hover{filter:brightness(1.02)}
+.btn:disabled{opacity:.7;cursor:not-allowed}
+.btn.secondary{background:#fff;color:var(--text);border:1px solid var(--border)}
+.input, input, select{background:#fff;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:12px 14px;outline:none;font-size:16px;line-height:22px}
+.input:focus, input:focus, select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,0.12)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow)}
+.header{height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#fff;border-bottom:1px solid var(--border)}
+.header .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.header .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px rgba(37,99,235,0.5)}
+.header .user{display:flex;align-items:center;gap:10px}
+.layout{display:grid;grid-template-columns:240px 1fr;height:calc(100vh - 60px)}
+.sidebar{border-right:1px solid var(--border);padding:16px;background:#fafafa}
+.sidebar .item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:var(--text);cursor:pointer}
+.sidebar .item.active,.sidebar .item:hover{background:#eff6ff}
+.content{padding:18px;overflow:auto;background:var(--panel)}
+.section-title{font-size:18px;font-weight:600;margin:0 0 12px 0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}
+.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.static-input{background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text)}
+.muted{color:var(--muted)}
+
+/* 行内表单：标签+输入同一行 */
+.row{display:flex;align-items:center;gap:12px}
+.row label{width:96px;color:var(--muted)}
+.row .input, .row input, .row select{flex:1}
+
+/* 按钮内联小型旋转器 */
+.spinner{display:inline-block;width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.6);border-top-color:#fff;animation:spin .8s linear infinite;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;right:0;top:44px;background:#fff;border:1px solid var(--border);border-radius:10px;min-width:150px;box-shadow:var(--shadow);z-index:99}
+.dropdown-menu .item{padding:10px 12px;cursor:pointer}
+.dropdown-menu .item:hover{background:#f3f4f6}
+.msg-bubble{padding:10px 12px;border-radius:12px;max-width:70%;}
+.msg-user{background:#e8f0ff;align-self:flex-end}
+.msg-assistant{background:#f3f4f6;align-self:flex-start}
